@@ -5,5 +5,15 @@ Contact
 {% endblock title %}
 
 {% block body %}
-This is contact body block
+<div class="container-fluid px-0">
+    <img src="https://source.unsplash.com/1200x400/?phone,contact" class="d-block w-100 my-4 mx-0" alt="...">
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
 {% endblock body %}
