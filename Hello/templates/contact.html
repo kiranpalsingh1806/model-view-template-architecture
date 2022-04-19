@@ -8,12 +8,27 @@ Contact
 <div class="container-fluid px-0">
     <img src="https://source.unsplash.com/1200x400/?phone,contact" class="d-block w-100 my-4 mx-0" alt="...">
 </div>
-<div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
+<div class="container">
+  <h1 class="text-center"> Contact Us</h1>
+  <form method="post" action="/contact">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email">
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input type="number" class="form-control" id="phone" name="phone" placeholder="Enter your phone number">
+    </div>
+    <div class="form-group">
+      <label for="desc"> Tell me what you want to contact me for ?</label>
+      <input type="text-area" class="form-control" id="desc" name="desc" placeholder="">
+    </div>
+    <button class = "btn btn-primary my-3"> Submit </button>
+  </form>
+</div>
 {% endblock body %}
