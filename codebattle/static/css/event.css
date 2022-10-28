@@ -1,0 +1,31 @@
+*{
+    line-height: 1.5em;
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+pre{
+    padding: 2em;
+    margin: 1em;
+}
+
+code{
+     line-height: 1em;
+}
+
+pre, code{
+    background: #DEE4ED;
+    border-radius: 5px;
+}
+
+
+ul, ol{
+    margin: 2em;
+}
+
+p{
+    margin: 1em 0;
+}

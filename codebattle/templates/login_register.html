@@ -1,0 +1,69 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    {% if page == 'register' %}
+        <div class="login-register--container">
+            <h1 class="form-field--title">Create an Account</h1>
+
+            <div>
+            <form method="POST" action="{% url 'register' %}" enctype="multipart/form-data">
+                <div id="form-wrapper">
+                    {% csrf_token %}
+                    {% for field in form %}
+                    <div class="form-field--wrapper" >
+                        <label>{{field.label}}</label>
+                        {{field}}
+                        <div>
+                            {% for error in field.errors %}
+                            <p class="error">{{error}}</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+                    <input class="btn btn--primary formsubmit-btn" type="submit" value="Register"/>
+               </div>
+            </form> 
+            </div>
+
+            <p class="login-register-switchpagetext">Already have an account? <a href="{% url 'login' %}">Login</a></p>
+        </div>
+    
+        {% else %}
+        <div class="login-register--container section">
+            <p class="login-greattings">Welcome to</p>
+            <h1 class="form-field--title">CodeBattels</h1>
+
+            <form method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+
+            
+
+                <!-- <div>
+                    <label>User:</label>
+                    <input type="text" name="username"/>
+                </div> -->
+
+                <div class="form-field--wrapper">
+                    <label>Email</label>
+                    <input class="form-field--input" id="id_email" type="email" name="email"/>
+                </div>
+
+                <div class="form-field--wrapper">
+                    <label>Password</label>
+                    <input class="form-field--input" id="id_password1" type="password" name="password"/>
+                </div>
+
+                <div class="form-field--wrapper">
+                    <input class="btn btn--primary formsubmit-btn" type="submit" value="Login"/>
+                </div>
+
+                <p class="login-register-switchpagetext">Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+            </form>
+        </div>
+        
+
+    {% endif %}
+
+{% endblock content %}
